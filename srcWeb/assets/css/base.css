@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+:root {
+    --background-out3 : #1f2a40; 
+    --background-out2 : #5f80c2;
+    --background-out1 : #2b3851;
+    --background-select : #1b253a;
+    --border-color : #141b29;
+    
+
+    --font-color2: #657e96;
+    --font-color1: #9ea6b3;
+    --font-user: #b5bec3;
+    --font-select: #1a75cd;
+
+    --color-data-on: #198ffa;
+    --color-data-off: #3c4d6c;
+
+    --color-box-shadow: #162035e1;
+
+
+    
+}
+
+@keyframes load_data {
+    from {
+        opacity: 0;
+        height: 10%;
+    }
+    to {
+        opacity: 1;
+        height: var(--dayx);
+    }
+}
+
+@keyframes load_circle {
+    from {
+        opacity: 0.5;
+        stroke-dashoffset: 310;
+    }
+    to {
+        opacity: 1;
+        stroke-dashoffset: 96.1;
+    }
+}
+@keyframes close_rotate_45to90 {
+    from {
+        transform: rotate(45deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+}
+@keyframes close_rotate_135to90 {
+    from {
+        transform: rotate(135deg);
+        opacity: 1;
+
+    }
+    to {
+        transform: rotate(90deg);
+        opacity: 0;
+
+    }
+}
+@keyframes show_hide {
+    0% {height:50px}
+    40% {height:30px}
+    60% {height:10px;}
+    100% {height:0px;}
+}
+
+@keyframes stretch_out {
+    0% {
+        width: 30px;
+        height: 30px;
+        border-radius: 20%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        width: 250px;
+        height: 300px;
+    }
+}
+@keyframes stretch_in {
+    0% {
+        opacity: 1;
+        width: 250px;
+        height: 300px;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        width: 30px;
+        height: 30px;
+        border-radius: 20%;
+        opacity: 0;
+    }
+}
+
+
+body {
+    background-color: var(--background-out3);
+}
+
+/* Overview */
+#full_overview {
+    width: 100%;
+    height: 937px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+}
+#main {
+    width: 100%;
+    height: 937px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    width: 100%;
+    height: 8%;
+    /* background-color: gray; */
+    display: flex;
+} 
+.center {
+    width: 100%;
+    height: 76%;
+    background-color: #1f2a40;
+    border-top: 1px solid #141b29;;
+    display: flex;
+}
+.bottom {
+    height: 16%;
+    background-color: #6c85b8;
+    border-top: 10px solid var(--background-out3);
+    background-color: var(--background-out3);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+

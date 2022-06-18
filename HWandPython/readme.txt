@@ -1,0 +1,1 @@
+Run device -> run web -> run .py(update data -> firebase) -> display web

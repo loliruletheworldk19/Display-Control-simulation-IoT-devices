@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome</title>
+
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://kit.fontawesome.com/02b11b4dc0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+    
+    <div id="full_overview">
+        <div id="main">
+
+            <div class="top" id="top_id">
+
+                <div class="box_logo">
+                    <img class="logo_01" src="./assets/img/logo_01.png" alt="Logo_01_smart_home" style="height: 50px;">
+                </div>
+    
+                <div class="box_bars">
+                    <div class="bars">
+                        <i class="fa-solid fa-bars fa-2x"></i>
+                    </div>
+                </div>
+    
+                <div class="box_center"></div>
+    
+                <div class="box_select">
+                    <div class="about"><i class="fa-solid fa-circle-question fa-2x"></i></div>
+                    <div class="mail"><i class="fa-solid fa-envelope fa-2x"></i></div>
+                    <div class="notification"><i class="fa-solid fa-bell fa-2x"></i></div>
+                </div>
+                
+                <div class="box_user">
+                    <div class="btn_user">
+                        <p>Username</p>
+                        <i class="fa-solid fa-sort-down" style="margin-left: 5px; margin-top: -1px;"></i>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="center" id="center_id">
+                <div class="center_left">
+                    <div class="my_home">
+                        <img src="./assets/img/my_nocnha.jpg" alt="" class="my_home_img">
+                        <div class="more_my_home" style="color: #657e96; font-size: 20px;">
+                            <div class="text_home">
+                                My Home
+                            </div>
+                            <div id="my_home_more">
+                                <label class="switch_home" id="sw_home">
+                                    <i id="sw_point" class="fa-solid fa-sort-down" style="margin-left: 5px; color: #1a75cd;"></i>
+                                    <input type="checkbox" id="btn_myhome" onclick="myFunction_opselectHOME()">
+                                </label>
+                            </div> 
+                        </div>
+    
+                        <div class="my_home_text" style="color: #657e96; font-weight: 300; margin-top: 10px;">
+                            29f Khu dân cư Hàng Bàng
+                        </div>
+                    </div>
+                    <div class="container_left">
+                        <div class="select_left Overview">
+                            <i class="fa-solid fa-house-chimney fa-2x"></i>
+                            Overview
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_overview" onclick="myFunction_overview()">
+                            </label>
+                        </div>
+                        <div class="select_left Devices">
+                            <i class="fa-solid fa-display fa-2x"></i>
+                            Devices
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_devices" onclick="myFunction_devices()">
+                            </label>
+                        </div>
+                        <div class="select_left Analitics">
+                            <i class="fa-solid fa-chart-line fa-2x"></i>
+                            Analitics
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_analitics" onclick="myFunction_analitics()">
+                            </label>
+                        </div>
+                        <div class="select_left Rules">
+                            <i class="fa-solid fa-chart-bar fa-2x"></i>
+                            Rules
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_rules" onclick="myFunction_rules()">
+                            </label>
+                        </div>
+                        <div class="select_left Gallery">
+                            <i class="fa-solid fa-images fa-2x"></i>
+                            Gallery
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_gallery" onclick="myFunction_gallery()">
+                            </label>
+                        </div>
+                        <div class="select_left History">
+                            <i class="fa-solid fa-clock-rotate-left fa-2x"></i>
+                            History
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_history" onclick="myFunction_history()">
+                            </label>
+                        </div>
+                        <div class="select_left Setting">
+                            <i class="fa-solid fa-gear fa-2x"></i>
+                            Settings
+                            <label class="switch_test">
+                                <input type="button" id="myCheck_settings" onclick="myFunction_settings()">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="center_right">
+                    <div class="title_center_right">
+                        <div style="flex: 7;">Overview</div>
+                        <div id="time_show" style="flex: 1;">Time loading...</div>
+                    </div>
+                    <div class="main_center_right" style="display: flex;">
+                        <div class="main_center_right-top">
+                            <div class="box_camera">
+                                <div class="camera_top">
+                                    <div class="text_camera">
+                                        CAMERA:
+                                    </div>
+                                    <div class="setting_camera">
+                                        <i class="fa-solid fa-ellipsis-vertical fa-2x" style="cursor: pointer;"></i>
+                                    </div>
+                                </div>
+                                <div class="camera_display">
+                                    <div class="data_show_camera-top">
+                                        <div class="data_show_camera_left">
+                                            <div class="data_camera-day">
+                                                01/05/2022
+                                            </div>
+                                            <div class="data_camera-time">
+                                                11:44 AM
+                                            </div>
+                                        </div>
+                                        <div class="data_show_camera_right">
+                                            <i class="fa-solid fa-video"></i>
+                                            Recording...
+                                        </div> 
+                                    </div>
+                                    <div class="data_show_camera-bot">
+                                        <div class="selec_camera">
+                                            <div class="camera_0 camera_1">C1</div>
+                                            <div class="camera_0 camera_2">C2</div>
+                                            <div class="camera_0 camera_3">C3</div>
+                                            <div class="camera_0 camera_4">C4</div>
+                                            <div class="camera_0 camera_5">C5</div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_infomation" style="font-size: 18px;">
+                                <div class="info_room">
+                                    <div class="info_room_circle_data">
+                                        <div class="outside_circle">
+                                            <div class="inside_circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="info_room_text_data">
+                                        <div class="info_room_text">
+                                            Consumption:
+                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="cursor: pointer; margin-top: 15px;"></i>
+                                        </div>
+                                        <div class="info_room_text">
+                                            <div class="ponit_data">
+                                                <div class="point_show" style="background-color: #ffad4e;"></div>
+                                                <div class="point_text">Living Room</div>
+                                            </div>
+                                            <div class="point_percent">20%</div>
+                                        </div>
+                                        <div class="info_room_text">
+                                            <div class="ponit_data">
+                                                <div class="point_show" style="background-color: #ef403b;"></div>
+                                                <div class="point_text">Studio</div>
+                                            </div>
+                                            <div class="point_percent">13%</div>
+                                        </div>
+                                        <div class="info_room_text">
+                                            <div class="ponit_data">
+                                                <div class="point_show" style="background-color: #853da1;"></div>
+                                                <div class="point_text">Tran's Bedroom</div>
+                                            </div>
+                                            <div class="point_percent">12%</div>
+                                        </div>
+                                        <div class="info_room_text">
+                                            <div class="ponit_data">
+                                                <div class="point_show" style="background-color: #198ffa;"></div>
+                                                <div class="point_text">Garage</div>
+                                            </div>
+                                            <div class="point_percent">39%</div>
+                                        </div>
+                                        <div class="info_room_text">
+                                            <div class="ponit_data">
+                                                <div class="point_show" style="background-color: #00ca86;"></div>
+                                                <div class="point_text">Kitchen</div>
+                                            </div>
+                                            <div class="point_percent">16%</div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_system">
+                                    <div class="info_day">
+                                        <div class="info_day_top">
+                                            <div class="info_day_text">
+                                                Consumption by day:
+                                            </div>
+                                            <div class="info_day_select">
+                                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="cursor: pointer;"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info_day_data">
+                                            <span class="day" style="--dayx:50%"></span>
+                                            <div class="show_data_day">50%</div>
+                                            <span class="day" style="--dayx:30%"></span>
+                                            <div class="show_data_day">30%</div>
+                                            <span class="day" style="--dayx:40%"></span>
+                                            <div class="show_data_day">40%</div>
+                                            <span class="day" style="--dayx:60%"></span>
+                                            <div class="show_data_day">60%</div>
+                                            <span class="day" style="--dayx:90%"></span>
+                                            <div class="show_data_day">90%</div>
+                                            <span class="day" style="--dayx:70%"></span>
+                                            <div class="show_data_day">70%</div>
+                                            <span class="day" style="--dayx:50%"></span>
+                                            <div class="show_data_day">50%</div>
+                                        </div>
+                                        <!-- <div class="show_data"></div> -->
+                                        <div class="info_day_sticker">
+                                            <span>MON</span>
+                                            <span>TUE</span>
+                                            <span>WED</span>
+                                            <span>THU</span>
+                                            <span>FRI</span>
+                                            <span>SAT</span>
+                                            <span>SUN</span>
+                                            <day class="text-data" style="display: none;">xxx</day>
+                                        </div>
+                                        <div class="info_day_btn">
+                                            <input type="button" class="btn-day" value="SEE MORE INFO">
+                                        </div>
+                                    </div>
+                                    <div class="info_limit">
+                                        <div class="info_limit_top">
+                                            <div class="info_limit_text">
+                                                Device Limit:
+                                            </div>
+                                            <div class="info_limit_select">
+                                                <i class="fa-solid fa-ellipsis-vertical fa-2x" style="cursor: pointer;"></i>
+                                            </div>
+                                        </div>
+                                        <div class="device_circle">
+    
+                                            <div class="outer">
+                                                <div class="iner">
+                                                    <div id="circle_data">0%</div>
+                                                </div>
+                                            </div>
+            
+                                            <svg width="120px" height="120px">
+                                                <defs>
+                                                   <linearGradient id="GradientColor">
+                                                      <stop offset="0%" stop-color="#49a2f2" />
+                                                      <stop offset="100%" stop-color="#0060b8" />
+                                                   </linearGradient>
+                                                </defs>
+                                                <circle cx="60" cy="60" r="50" stroke-linecap="round" />
+                                            </svg>
+            
+                                        </div>
+                                        <div class="info_limit_btn">
+                                            <input type="button" class="btn-limit" value="SEE MORE INFO">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_relax">
+                                   
+                                <div class="main_right">
+    
+                                    <div class="container_1">
+                                        <div class="box_1">
+                                          <img src="https://source.unsplash.com/1000x800">
+                                          <a href="https://source.unsplash.com/1000x800" target="_blank" rel="noopener noreferrer" class="">1</a>
+                                        </div>
+                                        <div class="box_1">
+                                          <img src="https://source.unsplash.com/1000x801">
+                                          <a href="https://source.unsplash.com/1000x801" target="_blank" rel="noopener noreferrer" class="">2</a>
+                                        </div>
+                                        <div class="box_1">
+                                          <img src="https://source.unsplash.com/1000x802">
+                                          <a href="https://source.unsplash.com/1000x802" target="_blank" rel="noopener noreferrer" class="">3</a>
+                                        </div>
+                                        <div class="box_1">
+                                          <img src="https://source.unsplash.com/1000x803">
+                                          <a href="https://source.unsplash.com/1000x803" target="_blank" rel="noopener noreferrer" class="">4</a>
+                                        </div>
+                                        <div class="box_1">
+                                            <img src="https://source.unsplash.com/1000x804">
+                                            <a href="https://source.unsplash.com/1000x804" target="_blank" rel="noopener noreferrer" class="">5</a>
+                                        </div>
+                                        <div class="box_1">
+                                            <img src="https://source.unsplash.com/1000x805">
+                                            <a href="https://source.unsplash.com/1000x805" target="_blank" rel="noopener noreferrer" class="">6</a>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+    
+                            </div>
+                        </div>
+    
+                        <div class="main_center_right-bottom">
+                            <div class="right_bottom-top">
+                                <p>Status by units:</p>
+                                <span><i class="fa-solid fa-ellipsis-vertical fa-2x" style="cursor: pointer;"></i></span>
+                            </div>
+                            <div class="right_bottom-bot">
+                                <div id="status_1" class="right_bottom_bot-status">
+                                    <div class="title">LIVINGROOM</div>
+                                    <div class="data">
+                                        <div class="value" id="LIVINGROOM">---</div>
+                                        <div class="data_info">
+                                            <div class="unit">W</div>
+                                            <div class="state">
+                                                <i id="LIVINGROOM-up" class="fa-solid fa-arrow-up" style="display: none;"></i>
+                                                <i id="LIVINGROOM-down" class="fa-solid fa-arrow-down" style="display: none;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jamb"></div>
+                                <div id="status_2" class="right_bottom_bot-status">
+                                    <div class="title">OUTSIDE</div>
+                                    <div class="data">
+                                        <div class="value" id="OUTSIDE">---</div>
+                                        <div class="data_info">
+                                            <div class="unit">°F</div>
+                                            <div class="state">
+                                                <i id="OUTSIDE-up" class="fa-solid fa-arrow-up" style="display: none;"></i>
+                                                <i id="OUTSIDE-down" class="fa-solid fa-arrow-down" style="display: none;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jamb"></div>
+                                <div id="status_3" class="right_bottom_bot-status">
+                                    <div class="title">INSIDE</div>
+                                    <div class="data">
+                                        <div class="value" id="INSIDE">---</div>
+                                        <div class="data_info">
+                                            <div class="unit">°F</div>
+                                            <div class="state">
+                                                <i id="INSIDE-up" class="fa-solid fa-arrow-up" style="display: none;"></i>
+                                                <i id="INSIDE-down" class="fa-solid fa-arrow-down" style="display: none;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jamb"></div>
+                                <div id="status_4" class="right_bottom_bot-status">
+                                    <div class="title">WATER</div>
+                                    <div class="data">
+                                        <div class="value" id="WATER">---</div>
+                                        <div class="data_info">
+                                            <div class="unit">CF</div>
+                                            <div class="state">
+                                                <i id="WATER-up" class="fa-solid fa-arrow-up" style="display: none;"></i>
+                                                <i id="WATER-down" class="fa-solid fa-arrow-down" style="display: none;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jamb"></div>
+                                <div id="status_5" class="right_bottom_bot-status">
+                                    <div class="title">INTERNET</div>
+                                    <div class="data">
+                                        <div class="value" id="INTERNET">---</div>
+                                        <div class="data_info">
+                                            <div class="unit">MBPS</div>
+                                            <div class="state">
+                                                <i id="INTERNET-up" class="fa-solid fa-arrow-up" style="display: none;"></i>
+                                                <i id="INTERNET-down" class="fa-solid fa-arrow-down" style="display: none;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="bottom" id="bottom_id">
+                <div id="elem_1" class="control">
+                    
+                </div>
+                <div id="elem_2" class="control">
+                    <div class="box_sw">
+                        <label class="switch">
+                            <input type="checkbox" id="CheckBox02" onclick="myFunction_2()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="display_control">
+                        <div class="sensor">
+                            <img id="img_2A" src="./assets/img/sensor/camera_1.png" alt=""
+                            style="width:70px;height:80px;user-select: none; display: block;">
+                            <img id="img_2B" src="./assets/img/sensor/camera_2.png" alt=""
+                            style="width:70px;height:80px;user-select: none; display: none;">
+                        </div>
+                        <div class="text">
+                            <p id="title_2" class="title">
+                                Camera</p>
+                            <p id="text_2A" class="textinside">
+                                Active since</p>
+                            <p id="text_2B" class="textinside">
+                                April 9, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="elem_3" class="control">
+                    <div class="box_sw">
+                        <label class="switch">
+                            <input type="checkbox" id="CheckBox03" onclick="myFunction_3()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="display_control">
+                        <div class="sensor">
+                            <img id="img_3A" src="./assets/img/sensor/outlets_1.png" alt=""
+                            style="width:60px;height:70px;user-select: none; display: block;">
+                            <img id="img_3B" src="./assets/img/sensor/outlets_2.png" alt=""
+                            style="width:60px;height:70px;user-select: none; display: none;">
+                        </div>
+                        <div class="text">
+                            <p id="title_3" class="title">
+                                Outlets</p>
+                            <p id="text_3A" class="textinside">
+                                Active since</p>
+                            <p id="text_3B" class="textinside">
+                                June 18, 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="elem_4" class="control">
+                    <div class="box_sw">
+                        <label class="switch">
+                            <input type="checkbox" id="CheckBox04" onclick="myFunction_4()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="display_control">
+                        <div class="sensor">
+                            <img id="img_4A" src="./assets/img/sensor/wifi_1.png" alt=""
+                            style="width:75px;height:75px;user-select: none; display: block;">
+                            <img id="img_4B" src="./assets/img/sensor/wifi_2.png" alt=""
+                            style="width:75px;height:75px;user-select: none; display: none;">
+                        </div>
+                        <div class="text">
+                            <p id="title_4" class="title">
+                                Wifi</p>
+                            <p id="text_4A" class="textinside">
+                                Active since</p>
+                            <p id="text_4B" class="textinside">
+                                June 18, 2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="elem_5" class="control">
+                    <div class="box_sw">
+                        <label class="switch">
+                            <input type="checkbox" id="CheckBox05" onclick="myFunction_5()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="display_control">
+                        <div class="sensor">
+                            <img id="img_5A" src="./assets/img/sensor/thermostal_1.png" alt=""
+                            style="width:45px;height:75px;user-select: none; display: block;">
+                            <img id="img_5B" src="./assets/img/sensor/thermostal_2.png" alt=""
+                            style="width:45px;height:75px;user-select: none; display: none;">
+                        </div>
+                        <div class="text">
+                            <p id="title_5" class="title">
+                                Thermostat</p>
+                            <p id="text_5A" class="textinside">
+                                Active since</p>
+                            <p id="text_5B" class="textinside">
+                                June 18, 2025</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="select_home" id="select_home_op_cls">
+            <ul>
+                <li id="Home_slct_1" style="display: none;">45h Chung cư Linh Đông</li>
+                <li id="Home_slct_2" style="display: none;">46/2 Mạc Đỉnh Chi</li>
+                <li id="Home_slct_3" style="display: none;">Add more...</li>
+            </ul>
+        </div>
+
+
+        <div class="flw" id="flw_overview">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t1A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t1B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_overview" onclick="myFunction_cls_overview()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">Overview page settings</div>
+                <div class="center_control">
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+        <div class="flw" id="flw_devices">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t2A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t2B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_devices" onclick="myFunction_cls_devices()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">Devices</div>
+                <div class="center_control">
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+        <div class="flw" id="flw_analitics">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t3A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t3B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_analitics" onclick="myFunction_cls_analitics()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">Analitics</div>
+                <div class="center_control">
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+        <div class="flw" id="flw_rules">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t4A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t4B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_rules" onclick="myFunction_cls_rules()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">Rules</div>
+                <div class="center_control">
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+        <div class="flw" id="flw_gallery">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t5A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t5B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_gallery" onclick="myFunction_cls_gallery()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">Gallery</div>
+                <div class="center_control">
+                    
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+        <div class="flw" id="flw_history">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t6A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t6B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_history" onclick="myFunction_cls_history()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">History</div>
+                <div class="center_control">
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+        <div class="flw" id="flw_settings">
+            <div class="board_control_1">
+                <div class="top_control">
+                    <div class="close">
+                        <div class="t1" id="t7A" style="transform: rotate(45deg);"></div>
+                        <div class="t1" id="t7B" style="transform: rotate(135deg);"></div>
+                        <label class="close_btn">
+                            <input type="button" id="close_settings" onclick="myFunction_cls_settings()">
+                        </label>
+                    </div>
+                </div>
+                <div class="title">Settings</div>
+                <div class="center_control">
+                </div>
+                <div class="bot_control"></div>
+            </div>
+        </div>
+
+
+    </div>
+    
+    <script type="module" src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>
